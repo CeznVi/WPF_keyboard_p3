@@ -12,6 +12,7 @@ namespace Клавиатурный_Тренажерь_Wpf.MyWindows
         public GameResult(Result r)
         {
             InitializeComponent();
+
             LabelGameResult_lvlText.Content = r.lvl;
             LabelGameResult_FailsText.Content = r.fails;
             LabelGameResult_SpeedText.Content = r.speed;

@@ -3,5 +3,12 @@
   <Id>ee44b337-1f0e-4530-9fe6-9be4eaef1671</Id>
   <Login>test</Login>
   <Email>testovich@gmail.com</Email>
-  <Results />
+  <Results>
+    <Result>
+      <lvl>Dummy</lvl>
+      <fails>0</fails>
+      <speed>115</speed>
+      <gameDuratoin>-PT2.0906839S</gameDuratoin>
+    </Result>
+  </Results>
 </Player>

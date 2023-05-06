@@ -15,23 +15,24 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
+            <ColumnDefinition Width="62*" />
+            <ColumnDefinition Width="13*"/>
+            <ColumnDefinition Width="75*" />
         </Grid.ColumnDefinitions>
-        <Label Margin="3" FontFamily="Segoe Script" Grid.ColumnSpan="2" FontSize="16" 
+        <Label Margin="3,3,3,3" FontFamily="Segoe Script" Grid.ColumnSpan="3" FontSize="16" 
                Grid.Column="0" Grid.Row="0" 
                HorizontalContentAlignment="Center"
                VerticalContentAlignment="Center"
                x:Name="Label_Login">Login:</Label>
-        <TextBox Margin="3" FontFamily="Segoe Script" Grid.ColumnSpan="2" FontSize="18" Grid.Column="0" Grid.Row="1" x:Name="TextBox_Login"></TextBox>
-        <TextBox Margin="3" FontFamily="Segoe Script" Grid.ColumnSpan="2" FontSize="18" Grid.Column="0" Grid.Row="3" x:Name="TextBox_Email"></TextBox>
-        <Label Margin="3" FontFamily="Segoe Script" Grid.ColumnSpan="2" FontSize="16" 
+        <TextBox Margin="3,3,3,3" FontFamily="Segoe Script" Grid.ColumnSpan="3" FontSize="18" Grid.Column="0" Grid.Row="1" x:Name="TextBox_Login"></TextBox>
+        <TextBox Margin="3,3,3,3" FontFamily="Segoe Script" Grid.ColumnSpan="3" FontSize="18" Grid.Column="0" Grid.Row="3" x:Name="TextBox_Email"></TextBox>
+        <Label Margin="3,3,3,3" FontFamily="Segoe Script" Grid.ColumnSpan="3" FontSize="16" 
                Grid.Column="0" Grid.Row="2" 
                HorizontalContentAlignment="Center"
                VerticalContentAlignment="Center"
                x:Name="Label_Email">Email:</Label>
-        <Button  Margin="3" FontFamily="Segoe Script" FontSize="18" Grid.Column="0" Grid.Row="4" x:Name="Button_New" Click="Button_New_Click">New</Button>
-        <Button  Margin="3" FontFamily="Segoe Script" FontSize="18" Grid.Column="1" Grid.Row="4" x:Name="Button_Auth" Click="Button_Auth_Click">Auth</Button>
+        <Button  Margin="3,3,3,3" FontFamily="Segoe Script" FontSize="18" Grid.Column="0" Grid.Row="4" x:Name="Button_New" Click="Button_New_Click" Grid.ColumnSpan="2">New</Button>
+        <Button  Margin="3,3,3,3" FontFamily="Segoe Script" FontSize="18" Grid.Column="2" Grid.Row="4" x:Name="Button_Auth" Click="Button_Auth_Click">Auth</Button>
     </Grid>
 
 </Window>

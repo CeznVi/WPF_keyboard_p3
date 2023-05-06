@@ -99,7 +99,9 @@ namespace Клавиатурный_Тренажерь_Wpf
                 AuthWindow authWindow = new AuthWindow();
                 authWindow.ShowDialog();
                 _currentPlayer = authWindow.Player;
-                Label_CurrentUser.Content = _currentPlayer.Login;
+
+                if (_currentPlayer != null)
+                    Label_CurrentUser.Content = _currentPlayer.Login;
             }
 
             if (!_taskTimer.IsEnabled)          //если таймер не включен
@@ -422,7 +424,28 @@ namespace Клавиатурный_Тренажерь_Wpf
 
         private void Button_ShowResults_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("В следующей версии :)");
+            if (_currentPlayer == null)
+            {
+                AuthWindow authWindow = new AuthWindow();
+                authWindow.ShowDialog();
+                _currentPlayer = authWindow.Player;
+                
+                if(_currentPlayer != null)
+                    Label_CurrentUser.Content = _currentPlayer.Login;
+            }
+
+            if (_currentPlayer != null)
+            {
+                Result result = _currentPlayer.Results.FirstOrDefault(r => r.lvl == ComboBox_SelectDifficult.SelectedItem.ToString());
+
+                if (result != null)
+                {
+                    GameResult gmr = new GameResult(result);
+                    gmr.Show();
+                }
+                else
+                    MessageBox.Show("Выбранный уровень не пройден");
+            }
         }
     }
 }
