@@ -117,8 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AuthWindowTitle" xml:space="preserve">
+    <value>Auth</value>
+  </data>
+  <data name="Button_Auth_Click" xml:space="preserve">
+    <value>Auth</value>
+  </data>
   <data name="Button_EndGame" xml:space="preserve">
     <value>End</value>
+  </data>
+  <data name="Button_New_Click" xml:space="preserve">
+    <value>New</value>
   </data>
   <data name="Button_ShowResults" xml:space="preserve">
     <value>Results</value>
@@ -129,8 +138,14 @@
   <data name="Label_CurrentUser" xml:space="preserve">
     <value>Undefine User</value>
   </data>
+  <data name="Label_Email" xml:space="preserve">
+    <value>Email:</value>
+  </data>
   <data name="Label_fails" xml:space="preserve">
     <value>Fails:</value>
+  </data>
+  <data name="Label_Login" xml:space="preserve">
+    <value>Login:</value>
   </data>
   <data name="Label_Speed" xml:space="preserve">
     <value>Speed:</value>
@@ -143,8 +158,5 @@
   </data>
   <data name="MainWindowTitle" xml:space="preserve">
     <value>Keyboard triner</value>
-  </data>
-  <data name="String1" xml:space="preserve">
-    <value />
   </data>
 </root>

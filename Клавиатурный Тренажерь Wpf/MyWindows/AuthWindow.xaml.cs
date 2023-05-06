@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Клавиатурный_Тренажерь_Wpf.Controller;
 using Клавиатурный_Тренажерь_Wpf.Entity;
+using Клавиатурный_Тренажерь_Wpf.Lang;
 using Клавиатурный_Тренажерь_Wpf.Repo;
 
 namespace Клавиатурный_Тренажерь_Wpf.MyWindows
@@ -27,6 +28,7 @@ namespace Клавиатурный_Тренажерь_Wpf.MyWindows
         public AuthWindow()
         {
             InitializeComponent();
+            UpdateUICulture();
         }
 
         private void Button_New_Click(object sender, RoutedEventArgs e)
@@ -36,7 +38,7 @@ namespace Клавиатурный_Тренажерь_Wpf.MyWindows
                 TextBox_Login.Foreground = new SolidColorBrush(Colors.White);
                 TextBox_Login.Background = new SolidColorBrush(Colors.Red);
             }
-            else if(TextBox_Email.Text.Length < 8)
+            else if (TextBox_Email.Text.Length < 8)
             {
                 TextBox_Email.Foreground = new SolidColorBrush(Colors.White);
                 TextBox_Email.Background = new SolidColorBrush(Colors.Red);
@@ -44,8 +46,8 @@ namespace Клавиатурный_Тренажерь_Wpf.MyWindows
             else
             {
 
-                if(PlayerRepository.IsPlayerExeting(new Player { Login = TextBox_Login.Text })) 
-                { 
+                if (PlayerRepository.IsPlayerExeting(new Player { Login = TextBox_Login.Text }))
+                {
                     Player = null;
                     MessageBox.Show("Такой логин уже есть");
                     TextBox_Login.Text = string.Empty;
@@ -61,7 +63,7 @@ namespace Клавиатурный_Тренажерь_Wpf.MyWindows
 
         private void Button_Auth_Click(object sender, RoutedEventArgs e)
         {
-            
+
             if (PlayerRepository.IsPlayerExeting(new Player { Login = TextBox_Login.Text }))
             {
                 Player = PlayerRepository.LoadPlayer(TextBox_Login.Text);
@@ -75,6 +77,13 @@ namespace Клавиатурный_Тренажерь_Wpf.MyWindows
                 TextBox_Email.Text = string.Empty;
             }
 
+        }
+
+
+        private void UpdateUICulture()
+        {
+            this.Title = Strings.AuthWindowTitle;
+            Label_Login.Content = Strings.Label_Login;
         }
     }
 }

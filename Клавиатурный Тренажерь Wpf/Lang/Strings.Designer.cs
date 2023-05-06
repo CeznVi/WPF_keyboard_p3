@@ -61,11 +61,38 @@ namespace Клавиатурный_Тренажерь_Wpf.Lang {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Auth.
+        /// </summary>
+        internal static string AuthWindowTitle {
+            get {
+                return ResourceManager.GetString("AuthWindowTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Auth.
+        /// </summary>
+        internal static string Button_Auth_Click {
+            get {
+                return ResourceManager.GetString("Button_Auth_Click", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на End.
         /// </summary>
         internal static string Button_EndGame {
             get {
                 return ResourceManager.GetString("Button_EndGame", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на New.
+        /// </summary>
+        internal static string Button_New_Click {
+            get {
+                return ResourceManager.GetString("Button_New_Click", resourceCulture);
             }
         }
         
@@ -97,11 +124,29 @@ namespace Клавиатурный_Тренажерь_Wpf.Lang {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Email:.
+        /// </summary>
+        internal static string Label_Email {
+            get {
+                return ResourceManager.GetString("Label_Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Fails:.
         /// </summary>
         internal static string Label_fails {
             get {
                 return ResourceManager.GetString("Label_fails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Login:.
+        /// </summary>
+        internal static string Label_Login {
+            get {
+                return ResourceManager.GetString("Label_Login", resourceCulture);
             }
         }
         
@@ -138,15 +183,6 @@ namespace Клавиатурный_Тренажерь_Wpf.Lang {
         internal static string MainWindowTitle {
             get {
                 return ResourceManager.GetString("MainWindowTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на .
-        /// </summary>
-        internal static string String1 {
-            get {
-                return ResourceManager.GetString("String1", resourceCulture);
             }
         }
     }

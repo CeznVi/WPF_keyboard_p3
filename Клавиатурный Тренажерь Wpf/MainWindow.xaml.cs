@@ -419,7 +419,9 @@ namespace Клавиатурный_Тренажерь_Wpf
             Label_CurrentUser.Content = Strings.Label_CurrentUser;
             Label_fails.Content = Strings.Label_fails;
             Label_StatusInfo.Content = Strings.Label_StatusInfo;
-
+            Label_Speed.Content = Strings.Label_Speed;
+            Label_Speeds.Content = Strings.Label_Speeds;
+            
         }
 
         private void Button_ShowResults_Click(object sender, RoutedEventArgs e)

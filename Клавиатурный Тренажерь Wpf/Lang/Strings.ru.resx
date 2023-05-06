@@ -117,8 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AuthWindowTitle" xml:space="preserve">
+    <value>Вход в учетную запись</value>
+  </data>
+  <data name="Button_Auth_Click" xml:space="preserve">
+    <value>Логин</value>
+  </data>
   <data name="Button_EndGame" xml:space="preserve">
     <value>Завершить</value>
+  </data>
+  <data name="Button_New_Click" xml:space="preserve">
+    <value>Новая учетная запись</value>
   </data>
   <data name="Button_ShowResults" xml:space="preserve">
     <value>Результаты</value>
@@ -129,8 +138,14 @@
   <data name="Label_CurrentUser" xml:space="preserve">
     <value>Неопределенный пользователь</value>
   </data>
+  <data name="Label_Email" xml:space="preserve">
+    <value>Почта:</value>
+  </data>
   <data name="Label_fails" xml:space="preserve">
     <value>Ошибок:</value>
+  </data>
+  <data name="Label_Login" xml:space="preserve">
+    <value>Логин:</value>
   </data>
   <data name="Label_Speed" xml:space="preserve">
     <value>Скорость:</value>
