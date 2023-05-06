@@ -84,6 +84,9 @@ namespace Клавиатурный_Тренажерь_Wpf.MyWindows
         {
             this.Title = Strings.AuthWindowTitle;
             Label_Login.Content = Strings.Label_Login;
+            Label_Email.Content = Strings.Label_Email;
+            Button_New.Content = Strings.Button_New_Click;
+            Button_Auth.Content = Strings.Button_Auth_Click;
         }
     }
 }

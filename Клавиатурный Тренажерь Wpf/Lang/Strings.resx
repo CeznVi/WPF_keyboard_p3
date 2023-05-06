@@ -135,6 +135,18 @@
   <data name="Button_StartGame" xml:space="preserve">
     <value>Start</value>
   </data>
+  <data name="LabelGameResult_Fails" xml:space="preserve">
+    <value>Fails:</value>
+  </data>
+  <data name="LabelGameResult_GameDuration" xml:space="preserve">
+    <value>GameDuration:</value>
+  </data>
+  <data name="LabelGameResult_lvl" xml:space="preserve">
+    <value>Lvl:</value>
+  </data>
+  <data name="LabelGameResult_SpeedText" xml:space="preserve">
+    <value>Speed:</value>
+  </data>
   <data name="Label_CurrentUser" xml:space="preserve">
     <value>Undefine User</value>
   </data>

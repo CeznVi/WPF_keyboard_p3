@@ -120,8 +120,14 @@
   <data name="AuthWindowTitle" xml:space="preserve">
     <value>Вхід в обліковий запис</value>
   </data>
+  <data name="Button_Auth_Click" xml:space="preserve">
+    <value>Увійти</value>
+  </data>
   <data name="Button_EndGame" xml:space="preserve">
     <value>Завершити</value>
+  </data>
+  <data name="Button_New_Click" xml:space="preserve">
+    <value>Створити</value>
   </data>
   <data name="Button_ShowResults" xml:space="preserve">
     <value>Результати</value>
@@ -129,11 +135,29 @@
   <data name="Button_StartGame" xml:space="preserve">
     <value>Старт</value>
   </data>
+  <data name="LabelGameResult_Fails" xml:space="preserve">
+    <value>Помилок:</value>
+  </data>
+  <data name="LabelGameResult_GameDuration" xml:space="preserve">
+    <value>Тривалість:</value>
+  </data>
+  <data name="LabelGameResult_lvl" xml:space="preserve">
+    <value>Рівень:</value>
+  </data>
+  <data name="LabelGameResult_SpeedText" xml:space="preserve">
+    <value>Швидкість:</value>
+  </data>
   <data name="Label_CurrentUser" xml:space="preserve">
     <value>Невстановленний користувач</value>
   </data>
+  <data name="Label_Email" xml:space="preserve">
+    <value>Пошта:</value>
+  </data>
   <data name="Label_fails" xml:space="preserve">
     <value>Помилки:</value>
+  </data>
+  <data name="Label_Login" xml:space="preserve">
+    <value>Логін:</value>
   </data>
   <data name="Label_Speed" xml:space="preserve">
     <value>Швидкість:</value>

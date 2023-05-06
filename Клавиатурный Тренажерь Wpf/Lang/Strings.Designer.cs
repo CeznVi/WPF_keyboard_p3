@@ -178,6 +178,42 @@ namespace Клавиатурный_Тренажерь_Wpf.Lang {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Fails:.
+        /// </summary>
+        internal static string LabelGameResult_Fails {
+            get {
+                return ResourceManager.GetString("LabelGameResult_Fails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на GameDuration:.
+        /// </summary>
+        internal static string LabelGameResult_GameDuration {
+            get {
+                return ResourceManager.GetString("LabelGameResult_GameDuration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Lvl:.
+        /// </summary>
+        internal static string LabelGameResult_lvl {
+            get {
+                return ResourceManager.GetString("LabelGameResult_lvl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Speed:.
+        /// </summary>
+        internal static string LabelGameResult_SpeedText {
+            get {
+                return ResourceManager.GetString("LabelGameResult_SpeedText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Keyboard triner.
         /// </summary>
         internal static string MainWindowTitle {

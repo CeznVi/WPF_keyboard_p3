@@ -400,7 +400,7 @@ namespace Клавиатурный_Тренажерь_Wpf
         {
             string mainLang = ComboBox_Lang.SelectedItem.ToString();
 
-
+            
             if (mainLang == "uk") mainLang = "uk-UA";
 
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(mainLang);
@@ -411,12 +411,16 @@ namespace Клавиатурный_Тренажерь_Wpf
         private void UpdateUICulture()
         {
 
-            //////////////////////ДОПИИЛИТЬ
             this.Title = Strings.MainWindowTitle;
             Button_StartGame.Content = Strings.Button_StartGame;
             Button_EndGame.Content = Strings.Button_EndGame;
             Button_ShowResults.Content = Strings.Button_ShowResults;
-            Label_CurrentUser.Content = Strings.Label_CurrentUser;
+
+            if (_currentPlayer == null)
+                Label_CurrentUser.Content = Strings.Label_CurrentUser;
+            else
+                Label_CurrentUser.Content = _currentPlayer.Login;
+
             Label_fails.Content = Strings.Label_fails;
             Label_StatusInfo.Content = Strings.Label_StatusInfo;
             Label_Speed.Content = Strings.Label_Speed;
@@ -435,18 +439,20 @@ namespace Клавиатурный_Тренажерь_Wpf
                 if(_currentPlayer != null)
                     Label_CurrentUser.Content = _currentPlayer.Login;
             }
-
-            if (_currentPlayer != null)
+            else
             {
-                Result result = _currentPlayer.Results.FirstOrDefault(r => r.lvl == ComboBox_SelectDifficult.SelectedItem.ToString());
-
-                if (result != null)
+                if (ComboBox_SelectDifficult.SelectedItem != null)
                 {
-                    GameResult gmr = new GameResult(result);
-                    gmr.Show();
+                   Result result = _currentPlayer.Results.FirstOrDefault(r => r.lvl == ComboBox_SelectDifficult.SelectedItem.ToString());
+
+                    if (result != null)
+                    {
+                      GameResult gmr = new GameResult(result);
+                      gmr.Show();
+                    }
+                    else
+                      MessageBox.Show("Выбранный уровень не пройден");
                 }
-                else
-                    MessageBox.Show("Выбранный уровень не пройден");
             }
         }
     }

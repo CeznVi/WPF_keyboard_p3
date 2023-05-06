@@ -295,7 +295,7 @@
                 <Label x:Name="Label_StatusInfo" FontWeight="Bold" FontFamily="Segoe UI Black">--</Label>
             </StatusBarItem>
             <StatusBarItem Grid.Column="2">
-                <Label FontFamily="Segoe Script" x:Name="Label_CurrentUser" FontWeight="Bold">Undefine User</Label>
+                <Label FontFamily="Segoe Script" x:Name="Label_CurrentUser" FontWeight="Bold"></Label>
             </StatusBarItem>
         </StatusBar>
     </Grid>

@@ -121,19 +121,31 @@
     <value>Вход в учетную запись</value>
   </data>
   <data name="Button_Auth_Click" xml:space="preserve">
-    <value>Логин</value>
+    <value>Войти</value>
   </data>
   <data name="Button_EndGame" xml:space="preserve">
     <value>Завершить</value>
   </data>
   <data name="Button_New_Click" xml:space="preserve">
-    <value>Новая учетная запись</value>
+    <value>Создать</value>
   </data>
   <data name="Button_ShowResults" xml:space="preserve">
     <value>Результаты</value>
   </data>
   <data name="Button_StartGame" xml:space="preserve">
     <value>Старт</value>
+  </data>
+  <data name="LabelGameResult_Fails" xml:space="preserve">
+    <value>Ошибок:</value>
+  </data>
+  <data name="LabelGameResult_GameDuration" xml:space="preserve">
+    <value>Длительность:</value>
+  </data>
+  <data name="LabelGameResult_lvl" xml:space="preserve">
+    <value>Уровень:</value>
+  </data>
+  <data name="LabelGameResult_SpeedText" xml:space="preserve">
+    <value>Скорость:</value>
   </data>
   <data name="Label_CurrentUser" xml:space="preserve">
     <value>Неопределенный пользователь</value>
