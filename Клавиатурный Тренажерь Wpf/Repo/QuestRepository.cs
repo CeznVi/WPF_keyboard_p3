@@ -11,6 +11,7 @@ namespace Клавиатурный_Тренажерь_Wpf.Entity
 {
     class QuestRepository
     {
+
         public static void SaveData(QuestController controller, string fileName = $"/QuestRepo.xml", string dirPath = "../../../../SaveFile")
         {
             try
@@ -38,15 +39,15 @@ namespace Клавиатурный_Тренажерь_Wpf.Entity
         {
             try
             {
-                if (!File.Exists(dirPath + fileName))
+                 if (!File.Exists(dirPath + fileName))
                     throw new FileNotFoundException($"Файл: {fileName} не создан.");
 
-                XmlSerializer serializer = new(typeof(List<Quest>));
+                 XmlSerializer serializer = new(typeof(List<Quest>));
 
-                using (Stream stream = File.OpenRead(dirPath + fileName))
-                {
-                    controller.Quests.AddRange((List<Quest>)serializer.Deserialize(stream));
-                }
+                 using (Stream stream = File.OpenRead(dirPath + fileName))
+                   {
+                     controller.Quests.AddRange((List<Quest>)serializer.Deserialize(stream));
+                   }
 
             }
             catch (Exception e)

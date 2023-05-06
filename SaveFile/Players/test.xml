@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Player xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>c498f62d-0860-4441-b7a0-1835a9283d2c</Id>
+  <Login>test</Login>
+  <Email>asdasdasd</Email>
+  <Results>
+    <Result>
+      <lvl>Easy</lvl>
+      <fails>1</fails>
+      <speed>165</speed>
+      <gameDuratoin>-PT12.6945052S</gameDuratoin>
+    </Result>
+  </Results>
+</Player>

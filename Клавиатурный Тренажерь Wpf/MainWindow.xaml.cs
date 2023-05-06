@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -8,8 +9,11 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
+using Клавиатурный_Тренажерь_Wpf.Controller;
 using Клавиатурный_Тренажерь_Wpf.Entity;
+using Клавиатурный_Тренажерь_Wpf.Lang;
 using Клавиатурный_Тренажерь_Wpf.MyWindows;
+using Клавиатурный_Тренажерь_Wpf.Repo;
 
 namespace Клавиатурный_Тренажерь_Wpf
 {
@@ -19,6 +23,8 @@ namespace Клавиатурный_Тренажерь_Wpf
     public partial class MainWindow : Window
     {
 
+        private LanguageSwitcher _LanguageSwitcher;
+
         private string _quest = string.Empty;
         private string _currentQuestResult = "";
         private int _indexCurrentLetter = 0;
@@ -26,7 +32,8 @@ namespace Клавиатурный_Тренажерь_Wpf
         private int _countTotal = 0;
         private float _speed = 0.0f;
 
-        QuestController _controllerQuests;
+        private QuestController _controllerQuests;
+        private Player _currentPlayer = null;
 
         private DispatcherTimer _taskTimer;
         private DateTime _startTime;
@@ -53,6 +60,26 @@ namespace Клавиатурный_Тренажерь_Wpf
             QuestRepository.LoadData(_controllerQuests);
             ComboBox_SelectDifficult.ItemsSource = _controllerQuests.GetAllDifficults();
 
+            /*------------------- ЛОКАЛИЗАЦИЯ -------------------СТАРТ*/
+            string mainLang = Thread.CurrentThread.CurrentUICulture.ToString();
+
+            _LanguageSwitcher = new LanguageSwitcher(@"..\..\..\Lang\", ".resx");
+
+            foreach (var item in _LanguageSwitcher.Langs)
+            {
+                ComboBox_Lang.Items.Add(item);
+            }
+
+            ///костыль для укр мовы
+            if (mainLang == "uk-UA") mainLang = "uk";
+
+            if (_LanguageSwitcher.Langs.Contains(mainLang.Split("-")[0]))
+            {
+                ComboBox_Lang.SelectedItem = mainLang.Split("-")[0];
+                UpdateUICulture();
+            }
+            /*------------------- ЛОКАЛИЗАЦИЯ -------------------КОНЕЦ*/
+
         }
 
         private void _taskTimer_Tick(object sender, EventArgs e)
@@ -67,6 +94,14 @@ namespace Клавиатурный_Тренажерь_Wpf
         /// <param name="e"></param>
         private void Button_StartGame_Click(object sender, RoutedEventArgs e)
         {
+            if (_currentPlayer == null)
+            {
+                AuthWindow authWindow = new AuthWindow();
+                authWindow.ShowDialog();
+                _currentPlayer = authWindow.Player;
+                Label_CurrentUser.Content = _currentPlayer.Login;
+            }
+
             if (!_taskTimer.IsEnabled)          //если таймер не включен
             {
                 ComboBox_SelectDifficult.IsEnabled = false;
@@ -314,14 +349,22 @@ namespace Клавиатурный_Тренажерь_Wpf
             _speed = ((float)(Math.Round(_quest.Length / _elapsedSpan.TotalMinutes) * -1));
 
             Label_SpeedInfo.Content = _speed.ToString();
-            
-            GameResult gameResult = new GameResult(
-                ComboBox_SelectDifficult.SelectedItem.ToString(),
-                _countFails,
-                _speed,
-                _elapsedSpan); 
+
+            Result result = new Result()
+            {
+                lvl = ComboBox_SelectDifficult.SelectedItem.ToString(),
+                fails = _countFails,
+                speed = _speed,
+                gameDuratoin = _elapsedSpan
+            };
+
+            PlayerController.UpdatePlayer(_currentPlayer, result);
+
+            GameResult gameResult = new GameResult(result); 
             
             gameResult.ShowDialog();
+
+
         }
 
         /// <summary>
@@ -349,6 +392,32 @@ namespace Клавиатурный_Тренажерь_Wpf
         {
             Button_StartGame.IsEnabled = true;
             _quest = _controllerQuests.GetQuestByDifficults(ComboBox_SelectDifficult.SelectedItem.ToString());
+        }
+
+        private void ComboBox_Lang_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string mainLang = ComboBox_Lang.SelectedItem.ToString();
+
+
+            if (mainLang == "uk") mainLang = "uk-UA";
+
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(mainLang);
+
+            UpdateUICulture();
+        }
+
+        private void UpdateUICulture()
+        {
+
+            //////////////////////ДОПИИЛИТЬ
+            this.Title = Strings.MainWindowTitle;
+            Button_StartGame.Content = Strings.Button_StartGame;
+            Button_EndGame.Content = Strings.Button_EndGame;
+            Button_ShowResults.Content = Strings.Button_ShowResults;
+            Label_CurrentUser.Content = Strings.Label_CurrentUser;
+            Label_fails.Content = Strings.Label_fails;
+            Label_StatusInfo.Content = Strings.Label_StatusInfo;
+
         }
 
         private void Button_ShowResults_Click(object sender, RoutedEventArgs e)

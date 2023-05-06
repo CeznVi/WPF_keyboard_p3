@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using Клавиатурный_Тренажерь_Wpf.Entity;
 
 namespace Клавиатурный_Тренажерь_Wpf.MyWindows
 {
@@ -8,13 +9,13 @@ namespace Клавиатурный_Тренажерь_Wpf.MyWindows
     /// </summary>
     public partial class GameResult : Window
     {
-        public GameResult(string lvl, int fails, float speed, TimeSpan d)
+        public GameResult(Result r)
         {
             InitializeComponent();
-            LabelGameResult_lvlText.Content = lvl;
-            LabelGameResult_FailsText.Content = fails;
-            LabelGameResult_SpeedText.Content = speed;
-            LabelGameResult_GameDurationText.Content =  $"{d.Seconds * -1} sec";
+            LabelGameResult_lvlText.Content = r.lvl;
+            LabelGameResult_FailsText.Content = r.fails;
+            LabelGameResult_SpeedText.Content = r.speed;
+            LabelGameResult_GameDurationText.Content =  $"{r.gameDuratoin.Seconds * -1} sec";
         }
 
         private void Button_Ok_Click(object sender, RoutedEventArgs e)
