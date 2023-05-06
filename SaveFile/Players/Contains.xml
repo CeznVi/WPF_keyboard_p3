@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Player xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>d0529c96-65b3-435a-9a53-3883c9874ff3</Id>
+  <Login>Contains</Login>
+  <Email>Contains@dsfa.com</Email>
+  <Results>
+    <Result>
+      <lvl>Dummy</lvl>
+      <fails>0</fails>
+      <speed>74</speed>
+      <gameDuratoin>-PT3.255074S</gameDuratoin>
+    </Result>
+    <Result>
+      <lvl>Easy</lvl>
+      <fails>1</fails>
+      <speed>196</speed>
+      <gameDuratoin>-PT10.7087417S</gameDuratoin>
+    </Result>
+  </Results>
+</Player>

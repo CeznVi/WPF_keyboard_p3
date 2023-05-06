@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Packaging;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -49,6 +51,32 @@ namespace Клавиатурный_Тренажерь_Wpf.Repo
             else return false;
         }
 
+        public static Player LoadPlayer(string login)
+        {
+            string fileName = $"/{login}.xml";
+            string dirPath = "../../../../SaveFile/Players";
 
+            Player player = new Player();
+
+            try
+            {
+                if (!File.Exists(dirPath + fileName))
+                    throw new FileNotFoundException($"Файл: {fileName} не создан.");
+
+                XmlSerializer serializer = new(typeof(Player));
+
+                using (Stream stream = File.OpenRead(dirPath + fileName))
+                {
+                    player = ((Player)serializer.Deserialize(stream));
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
+            return player;
+        }
     }
 }

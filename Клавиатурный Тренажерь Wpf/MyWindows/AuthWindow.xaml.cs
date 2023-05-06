@@ -43,9 +43,8 @@ namespace Клавиатурный_Тренажерь_Wpf.MyWindows
             }
             else
             {
-                Player = PlayerController.CreatePlayer(TextBox_Login.Text, TextBox_Email.Text);
 
-                if(PlayerRepository.IsPlayerExeting(Player)) 
+                if(PlayerRepository.IsPlayerExeting(new Player { Login = TextBox_Login.Text })) 
                 { 
                     Player = null;
                     MessageBox.Show("Такой логин уже есть");
@@ -54,6 +53,7 @@ namespace Клавиатурный_Тренажерь_Wpf.MyWindows
                 }
                 else
                 {
+                    Player = PlayerController.CreatePlayer(TextBox_Login.Text, TextBox_Email.Text);
                     this.Close();
                 }
             }
@@ -61,12 +61,11 @@ namespace Клавиатурный_Тренажерь_Wpf.MyWindows
 
         private void Button_Auth_Click(object sender, RoutedEventArgs e)
         {
-            Player = PlayerController.CreatePlayer(TextBox_Login.Text, TextBox_Email.Text);
-
-            if (PlayerRepository.IsPlayerExeting(Player))
+            
+            if (PlayerRepository.IsPlayerExeting(new Player { Login = TextBox_Login.Text }))
             {
+                Player = PlayerRepository.LoadPlayer(TextBox_Login.Text);
                 this.Close();
-
             }
             else
             {

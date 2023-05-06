@@ -29,12 +29,18 @@ namespace Клавиатурный_Тренажерь_Wpf.Controller
         }
 
         public static void UpdatePlayer(Player player, Result result) 
-        { 
-
-            player.Results.Add(result);
+        {
+            if(player.Results.Exists( r => r.lvl == result.lvl))
+            {
+                player.Results.Remove(player.Results.FirstOrDefault(r => r.lvl == result.lvl));
+                player.Results.Add(result);
+            }
+            else
+            {
+                player.Results.Add(result);
+            }
 
             PlayerRepository.SavePlayer(player);
-
         }
 
     }
