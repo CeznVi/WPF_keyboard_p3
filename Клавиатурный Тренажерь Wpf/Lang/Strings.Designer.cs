@@ -115,6 +115,15 @@ namespace Клавиатурный_Тренажерь_Wpf.Lang {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Result.
+        /// </summary>
+        internal static string GameResultTitle {
+            get {
+                return ResourceManager.GetString("GameResultTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Undefine User.
         /// </summary>
         internal static string Label_CurrentUser {
@@ -210,6 +219,15 @@ namespace Клавиатурный_Тренажерь_Wpf.Lang {
         internal static string LabelGameResult_SpeedText {
             get {
                 return ResourceManager.GetString("LabelGameResult_SpeedText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Game Results.
+        /// </summary>
+        internal static string LabelGameResult_Title {
+            get {
+                return ResourceManager.GetString("LabelGameResult_Title", resourceCulture);
             }
         }
         

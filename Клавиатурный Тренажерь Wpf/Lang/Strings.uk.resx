@@ -135,6 +135,9 @@
   <data name="Button_StartGame" xml:space="preserve">
     <value>Старт</value>
   </data>
+  <data name="GameResultTitle" xml:space="preserve">
+    <value>Результати</value>
+  </data>
   <data name="LabelGameResult_Fails" xml:space="preserve">
     <value>Помилок:</value>
   </data>
@@ -146,6 +149,9 @@
   </data>
   <data name="LabelGameResult_SpeedText" xml:space="preserve">
     <value>Швидкість:</value>
+  </data>
+  <data name="LabelGameResult_Title" xml:space="preserve">
+    <value>Досягнення у грі</value>
   </data>
   <data name="Label_CurrentUser" xml:space="preserve">
     <value>Невстановленний користувач</value>
